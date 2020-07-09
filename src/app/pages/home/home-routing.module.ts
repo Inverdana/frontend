@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'info',
     loadChildren: () => import('./info/info.module').then( m => m.InfoPageModule)
+  },
+  {
+    path: 'amigos',
+    loadChildren: () => import('./amigos/amigos.module').then( m => m.AmigosPageModule)
   }
 ];
 
