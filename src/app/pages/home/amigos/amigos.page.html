@@ -5,5 +5,24 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-card class="ion-padding">
+    <ion-card-header>
+      <ion-card-title>
+        <h1><strong>Invita a tus amigos</strong></h1>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <h1>Apoya a que los eventos de reforestación lleguen a más personas e invita a tus amigos a formar parte de esta comunidad para obtener logros dentro de la aplicación.</h1>
+      <br>
+      <br>
+      
+      <ion-item>
+        <ion-input name="code" [(ngModel)]="code" type="text" disabled></ion-input> 
+        <ion-button (click)="copyToClipboard()" size="default" fill="clear"><ion-icon color="dark" name="copy-outline" item-right></ion-icon></ion-button>
+      </ion-item>
+      
+    </ion-card-content>
+    <ion-button shape="round" expand="block"  color="dark">Compartir</ion-button>
+  </ion-card>
+  
 </ion-content>

@@ -32,6 +32,11 @@ export class AppComponent implements OnInit {
       url: '/folder/Trash',
       icon: 'trash'
     },
+    {
+      title: 'Mis Amigos',
+      url: '/home/amigos',
+      icon: 'people'
+    },
   ];
   public labels = ['Arboles', 'Acerca de'];
 
