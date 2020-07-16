@@ -11,18 +11,9 @@ import { CatalogoInterface, CatalogoResponseInterface } from '../types/catalogo.
 })
 export class CatalogoService {
 
-  constructor(private http: HttpClient, private persistence: PersistenceService, private catalogoInterface: CatalogoResponseInterface) { }
+  constructor(private http: HttpClient, private catalogoInterface: CatalogoResponseInterface) { }
 
   public getCatalogoArboles(){
-    return this.http.get<CatalogoResponseInterface>('http://www.splashbase.co/api/v1/images/latest').pipe(map(value=>{
-      const catalogo : CatalogoInterface = {
-        id: value.images.id,
-        url: value.images.url,
-        large_url: value.images.large_url,
-        source_id: value.images.source_id
-      }
-      console.log(value);
-      return catalogo;
-    } ))
+    return this.http.get('http://www.splashbase.co/api/v1/images/latest');
   }
 }
