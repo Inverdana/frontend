@@ -12,6 +12,7 @@ import { Observable, EMPTY, throwError, of } from 'rxjs';
 
 import {environment} from 'src/environments/environment';
 import { PersistenceService } from '../services/persistence.service';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class HttpAuthInterceptor implements HttpInterceptor {
@@ -26,7 +27,25 @@ export class HttpAuthInterceptor implements HttpInterceptor {
       }
     });
   }
-    return next.handle(request)
+    return next.handle(request).pipe(
+      catchError((error: HttpErrorResponse) => {
+        if (error.error instanceof Error) {
+          console.error('An error occurred:', error.error.message);
+        } else {
+          const token = this.persistenceService.set('token',null)
+          console.error(`Backend returned code ${error.status}, body was: ${error.error}`);
+        }
+
+        // If you want to return a new response:
+        //return of(new HttpResponse({body: [{name: "Default value..."}]}));
+
+        // If you want to return the error on the upper level:
+        //return throwError(error);
+
+        // or just return nothing:
+        return EMPTY;
+      })
+    );
     
   }
 }
