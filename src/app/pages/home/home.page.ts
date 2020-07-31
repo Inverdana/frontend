@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Observable } from 'rxjs';
 import { MeResponseInterface } from 'src/app/types/me.response.interface';
 import { MeInterface } from 'src/app/types/me.interface';
+import { PostCreateRequestInterface } from 'src/app/types/post.create.request.interface';
 
 @Component({
   selector: 'app-home',

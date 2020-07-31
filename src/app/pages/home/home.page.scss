@@ -49,6 +49,8 @@
   }
   ion-row{
     height: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
   }
   ion-col {
     --ion-grid-column-padding-xs: 0px;
@@ -64,8 +66,8 @@
     font-size: 45px;
   }
   ion-img {
-    height: 70px;
-    width: 70px;
+    height: 100px;
+    width: 100px;
   }
   
   .item.sc-ion-label-ios-h, .item .sc-ion-label-ios-h {

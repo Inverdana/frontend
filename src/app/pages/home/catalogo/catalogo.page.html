@@ -4,89 +4,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-  <ion-infinite-scroll-content class="background-svg">
-    <div>
-      <ion-grid>      
-        <ion-row>
-          <ion-col size-xs="10" size-sm="3" size-md="3" size-lg="3" size-xl="3" offset-xs="1" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
-            <div class="div-card1">
-              <div class="div-card2">
-                <ion-img height="200 px" src="https://splashbase.s3.amazonaws.com/newoldstock/regular/tumblr_ph8vgdJV2r1sfie3io1_1280.jpg" class="catalog-img"></ion-img>
-                <div class="div-card-text">
-                  <p class="card-text">Árbol 1</p>
-                </div>
-              </div>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+     
+      <ng-container *ngFor="let arbol of catalogo | async">
+      <ion-col size-xs="10" size-sm="3" size-md="3" size-lg="3" size-xl="3" offset-xs="1" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
+        <div class="div-card1">
+          <div class="div-card2">
+            <ion-img height="200 px" [src]="arbol.icono" class="catalog-img"></ion-img>
+            <div class="div-card-text">
+              <p class="card-text">{{arbol.nombre}}</p>
             </div>
-          </ion-col>
-
-          <ion-col size-xs="10" size-sm="3" size-md="3" size-lg="3" size-xl="3" offset-xs="1" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
-            <div class="div-card1">
-              <div class="div-card2">
-                <ion-img height="200 px" src="https://splashbase.s3.amazonaws.com/littlevisuals/regular/tumblr_n4e0j6iBHs1sdyj9lo1_1280.jpg" class="catalog-img"></ion-img>
-                <div class="div-card-text">
-                  <p class="card-text">Árbol 2</p>
-                </div>
-              </div>
-            </div>
-          </ion-col>
+          </div>
+        </div>
+      </ion-col>
+    </ng-container>
       
-          <ion-col size-xs="10" size-sm="3" size-md="3" size-lg="3" size-xl="3" offset-xs="1" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
-            <div class="div-card1">
-              <div class="div-card2">
-                <ion-img height="200 px" src="https://splashbase.s3.amazonaws.com/mazwai/regular/the_sea_also_rises_FKY.png%3F1506949636" class="catalog-img"></ion-img>
-                <div class="div-card-text">
-                  <p class="card-text">Árbol 3</p>
-                </div>
-              </div>
-            </div>
-          </ion-col>
 
-          <ion-col size-xs="10" size-sm="3" size-md="3" size-lg="3" size-xl="3" offset-xs="1" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
-            <div class="div-card1">
-              <div class="div-card2">
-                <ion-img height="200 px" src="https://splashbase.s3.amazonaws.com/mazwai/regular/travelpockets_iceland_land_of_fire_and_ice.png%3F1528191920" class="catalog-img"></ion-img>
-                <div class="div-card-text">
-                  <p class="card-text">Árbol 4</p>
-                </div>
-              </div>
-            </div>
-          </ion-col>
-          
-          <ion-col size-xs="10" size-sm="3" size-md="3" size-lg="3" size-xl="3" offset-xs="1" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
-            <div class="div-card1">
-              <div class="div-card2">
-                <ion-img height="200 px" src="https://splashbase.s3.amazonaws.com/travelcoffeebook/regular/tumblr_nx5c7cX0L01ta0hnbo1_1280.jpg" class="catalog-img"></ion-img>
-                <div class="div-card-text">
-                  <p class="card-text">Árbol 5</p>
-                </div>
-              </div>
-            </div>
-          </ion-col>
-
-          <ion-col size-xs="10" size-sm="3" size-md="3" size-lg="3" size-xl="3" offset-xs="1" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
-            <div class="div-card1">
-              <div class="div-card2">
-                <ion-img height="200 px" src="https://splashbase.s3.amazonaws.com/newoldstock/regular/tumblr_ph8vghR1xH1sfie3io1_1280.jpg" class="catalog-img"></ion-img>
-                <div class="div-card-text">
-                  <p class="card-text">Árbol 6</p>
-                </div>
-              </div>
-            </div>
-          </ion-col>
-
-          <ion-col size-xs="10" size-sm="3" size-md="3" size-lg="3" size-xl="3" offset-xs="1" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
-            <div class="div-card1">
-              <div class="div-card2">
-                <ion-img height="200 px" src="https://splashbase.s3.amazonaws.com/mazwai/regular/omote_iceland__an_iceland_venture.png%3F1528050680" class="catalog-img"></ion-img>
-                <div class="div-card-text">
-                  <p class="card-text">Árbol 7</p>
-                </div>
-              </div>
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
-  </ion-infinite-scroll-content>
+    </ion-row>
+  </ion-grid>
 </ion-content>

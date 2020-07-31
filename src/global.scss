@@ -24,3 +24,22 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+@font-face  {
+    font-family: Blogger;
+    src: url("/assets/blogger.otf");      
+}
+
+ion-card{
+   background-color: #EDF2D5;
+}
+
+ion-card-subtitle{
+    font-family: 'Blogger'!important;
+    text-transform: uppercase;
+    font-size: 13px !important;
+    font-weight: bold;
+    color: #000000;
+    padding-top: 5%;
+}

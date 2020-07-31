@@ -11,9 +11,9 @@ import { CatalogoInterface, CatalogoResponseInterface } from '../types/catalogo.
 })
 export class CatalogoService {
 
-  constructor(private http: HttpClient, private catalogoInterface: CatalogoResponseInterface) { }
+  constructor(private http: HttpClient) { }
 
   public getCatalogoArboles(){
-    return this.http.get('http://www.splashbase.co/api/v1/images/latest');
+    return this.http.get(environment.api.catalogo);
   }
 }
