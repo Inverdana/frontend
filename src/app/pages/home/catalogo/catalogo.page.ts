@@ -8,10 +8,10 @@ import { CatalogoService } from 'src/app/services/catalogo.service';
 })
 export class CatalogoPage implements OnInit {
 
-  constructor(private catalogoService: CatalogoService) { }
+  constructor(/*private catalogoService: CatalogoService*/) { }
 
   ngOnInit() {
     
-    console.log(this.catalogoService);
+    //console.log(this.catalogoService);
   }
 }

@@ -1,3 +1,16 @@
+.background-svg{
+    --background: none;
+    background-image: url(../../../../assets/Oval_Left.svg), url(../../../../assets/Oval_Right.svg);
+    background-position: left center, right center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 7%, 7%;
+    background-attachment: fixed, fixed;
+}
+
+.background-chafa{
+    min-height: '100%';
+}
+
 .catalog-img{
     border-radius: 45px !important;
     overflow: hidden;
