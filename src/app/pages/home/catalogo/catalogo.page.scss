@@ -1,0 +1,38 @@
+.catalog-img{
+    border-radius: 45px !important;
+    overflow: hidden;
+}
+
+.div-card1{
+    align-items: center;
+    background-color: #4A6A1D;
+    border-radius: 50px;
+    
+    margin-bottom: 20px;
+    margin-top: 20;
+    
+    padding: 10px;
+}
+
+.div-card2{
+    align-items: center;
+    border: 4px solid #9EB356;
+    border-radius: 50px;
+}
+
+.div-card-text{
+    background-color: #4A6A1D;
+
+    border-top: 4px solid #9EB356;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    
+    text-align: center;   
+}
+
+.card-text{
+    color: #9EB356;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+}

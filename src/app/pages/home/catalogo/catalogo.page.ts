@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CatalogoService } from 'src/app/services/catalogo.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-catalogo',
@@ -7,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogoPage implements OnInit {
 
-  constructor() { }
-
+  constructor(private catalogoService: CatalogoService) { }
+  catalogo:Observable<any>;
   ngOnInit() {
+    this.catalogo=this.catalogoService.getCatalogoArboles();
   }
-
 }

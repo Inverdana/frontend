@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
       title: 'Perfil',
       url: '/folder/Trash',
       icon: 'trash'
-    },
+    }
   ];
   public labels = ['Arboles', 'Acerca de'];
 
