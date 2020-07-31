@@ -1,9 +1,59 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col class="ion-text-center" justify-content-center >
+        <img class="logo" src="assets/logo.png"/>
+    </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col justify-content-center size="12" size-lg="6" size-md="6" offset-lg="3" offset-md="3">
+    
+      <ion-card>
+        <ion-card-header class="ion-text-center">
+          <ion-card-subtitle>Login</ion-card-subtitle>
+          <ion-card-title>Ingrese sus datos</ion-card-title>
+          <div class='errorLogin' *ngFor="let error of errors">
+            <ng-container>
+              <small class="error-message">{{error}}</small>
+            </ng-container>
+          </div>
+        </ion-card-header>
+        <ion-card-content>
+         <form [formGroup]= "loginForm" (keyup.enter)="submit()" (ngSubmit)="submit()">
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating">Usuario</ion-label>
+              <ion-input formControlName="username" inputmode="email" ></ion-input>
+            </ion-item>
+            <div class='errorLogin' *ngFor="let error of errorMessages.username">
+              <ng-container *ngIf="username.hasError(error.type) && (username.dirty || username.touched)">
+                <ion-chip color="danger">
+                  <ion-icon name="close-outline" color="red"></ion-icon>
+                  <ion-label> {{error.message}}</ion-label>
+                </ion-chip>                 </ng-container>
+            </div>
+            <ion-item>
+              <ion-label position="floating">Contraseña</ion-label>
+              <ion-input formControlName="password" inputmode="password" type="password" ></ion-input>
+            </ion-item>
+            <div class='errorLogin' *ngFor="let error of errorMessages.password">
+              <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+                <ion-chip color="danger">
+                  <ion-icon name="close-outline" color="red"></ion-icon>
+                  <ion-label> {{error.message}}</ion-label>
+                </ion-chip>                 </ng-container>
+            </div>
+            <br>
 
+            <ion-button class='submit' [disabled]="!loginForm.valid" type="submit" expand="block">
+              Iniciar Sesión
+              <ion-icon slot="end" name="send"></ion-icon>
+            </ion-button>
+          </ion-list>
+         </form>
+        </ion-card-content>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

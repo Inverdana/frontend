@@ -7,16 +7,18 @@ import { MeResponseInterface } from '../types/me.response.interface';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { MeInterface } from '../types/me.interface';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http:HttpClient, private persistence: PersistenceService) { }
+  constructor(private http:HttpClient, private persistence: PersistenceService, private router: Router) { }
   login(username:string,password:string){
     this.http.post<TokenResponseInterface>(environment.api.inicio,{username,password}).subscribe(response =>{
       this.persistence.set('token',response.auth_token)
+      this.router.navigate(['home'])
     })
   }
   me():Observable<MeInterface>{
