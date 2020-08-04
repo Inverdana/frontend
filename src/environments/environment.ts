@@ -8,6 +8,7 @@ export const environment = {
     inicio: 'http://localhost:8000/api/inicio/',
     yo: 'http://localhost:8000/api/yo/',
     catalogo: 'http://localhost:8000/api/catalogo/',
+    eventos: 'http://localhost:8000/api/eventos/',
 
   }
 };
