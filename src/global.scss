@@ -32,7 +32,10 @@
 }
 
 ion-card{
-   background-color: #EDF2D5;
+    --background: none;
+    background-color: #EDF2D5;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 ion-card-subtitle{
@@ -52,7 +55,15 @@ ion-card-title{
     padding-top: 5%;
 }
 ion-content{
-    --background: #EDF2D5;
+    --background: none;
+    background-image: url(./assets/Background/Oval_Left.svg), url(./assets/Background/Oval_Right.svg);
+    background-position: left center, right center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 7%, 7%;
+    background-attachment: fixed, fixed;
+    background-color: #EDF2D5;
+    align-items: center; 
+    justify-content: center;
 }
 
 .item.sc-ion-label-md-h, .item .sc-ion-label-md-h { 

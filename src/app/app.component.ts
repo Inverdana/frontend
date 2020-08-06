@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   public appPages = [
     {
       title: 'Inicio',
-      url: '/folder/Outbox',
+      url: '/home',
       icon: 'paper-plane'
     },
     {
