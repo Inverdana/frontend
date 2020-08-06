@@ -8,12 +8,15 @@ import { LogrosPageRoutingModule } from './logros-routing.module';
 
 import { LogrosPage } from './logros.page';
 
+import { CustomToolbarModule } from '../../../shared/custom-toolbar/custom-toolbar.module'
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LogrosPageRoutingModule
+    LogrosPageRoutingModule,
+    CustomToolbarModule
   ],
   declarations: [LogrosPage]
 })

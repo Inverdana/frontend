@@ -1,5 +1,5 @@
 .logo {
-    width: 30%;
+    width: 60%;
 }
 .card-content-md {
     background-color: #EDF2D5;
@@ -10,4 +10,36 @@ ion-list {
 }
 ion-item {
     --background: #EDF2D5;
+}
+
+ion-content{
+    --background: none;
+    background-image: url(../../../assets/Background/Oval_Up.svg), url(../../../assets/Background/Curva_VF_Down.svg), url(../../../assets/Background/Curva_VC_Down.svg);
+    background-position: top center, bottom left, bottom right;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 100%, 90%, 90%;
+    background-attachment: fixed, fixed, fixed;
+    background-color: #EDF2D5;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.login{
+    margin-top: 20%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.continue{
+    width: 100%;
+    position: absolute;
+    z-index: 99;
+    bottom: 0px;
+    opacity: 0.5;
+    background: #000;
+    color: #fff;
+}
+
+img{
+    width: 100%;
 }

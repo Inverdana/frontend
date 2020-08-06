@@ -1,13 +1,4 @@
-#container {
-    text-align: center;
-  
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
+
   #container strong {
     font-size: 20px;
     line-height: 26px;
@@ -54,6 +45,17 @@
   ion-img {
     height: 100px;
     width: 100px;
+  }
+
+  ion-card{
+    vertical-align: middle;
+    height: 100%;
+  }
+
+  ion-content{
+    vertical-align: middle;
+    align-content: center;
+    text-align: center;
   }
   
   .item.sc-ion-label-ios-h, .item .sc-ion-label-ios-h {

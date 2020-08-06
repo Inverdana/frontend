@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Logros',
-      url: '/folder/Favorites',
+      url: '/home/logros',
       icon: 'heart'
     },
     {
