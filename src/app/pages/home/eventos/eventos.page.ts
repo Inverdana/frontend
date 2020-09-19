@@ -9,10 +9,17 @@ import { Observable } from 'rxjs';
 })
 export class EventosPage implements OnInit {
 
-  constructor(private eventosService:EventosService) { }
+  constructor(
+    public eventosService:EventosService
+  ) { }
   eventos:Observable<any>
+
   ngOnInit() {
     this.eventos=this.eventosService.getEventos();
+  }
+
+  public inscribirEvento(id: number) {
+    this.eventosService.inscribirEvento(id);
   }
 
 }

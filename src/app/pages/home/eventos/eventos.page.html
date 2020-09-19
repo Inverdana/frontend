@@ -1,7 +1,5 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Eventos</ion-title>
-  </ion-toolbar>
+  <custom-toolbar></custom-toolbar>
 </ion-header>
 
 <ion-content>
@@ -9,17 +7,22 @@
     <ion-row>
      
       <ng-container *ngFor="let evento of eventos | async">
-      <ion-col size-xs="10" size-sm="3" size-md="3" size-lg="3" size-xl="3" offset-xs="1" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
+      <ion-col size-xs="11" size-sm="8" size-md="8" size-lg="8" size-xl="8" offset-xs="0.5" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
         <div class="div-card1">
           <div class="div-card2">
-           <ion-card>
+            <ion-img src="../assets/evento_placeholder.png" class="event-img"></ion-img>
             <div class="div-card-text ">
               <p class="card-text">{{evento.nombre}}</p>
-              <b>Descripción: </b><p class="card-text">{{evento.descripcion}}</p>
-              <b>Lugar: </b><p class="card-text">{{evento.lugar}}</p>
-              <ion-button>Inscribirse</ion-button>
+              <p class="card-text"><b>Capacidad: </b>{{evento.cupo}} personas</p>
+              <p class="card-description">{{evento.descripcion}}</p>
+              <p class="card-description"><b>Ubicación: </b>{{evento.lugar}}</p>
+              
+              <ion-button fill="clear" (click)="inscribirEvento(evento.id)">
+                <ion-img class="button-img" src="../assets/Background/Buttom.svg"></ion-img>
+              </ion-button>
+
+              <br><br><br>
             </div>
-          </ion-card>
           </div>
         </div>
       </ion-col>
