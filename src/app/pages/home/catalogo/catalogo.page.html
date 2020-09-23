@@ -8,12 +8,13 @@
      
       <ng-container *ngFor="let arbol of catalogo | async">
       <ion-col size-xs="10" size-sm="3" size-md="3" size-lg="3" size-xl="3" offset-xs="1" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
-        <div class="div-card1">
+        <div tappable (click)="doSomething(arbol)" class="div-card1">
           <div class="div-card2">
             <ion-img height="200 px" [src]="arbol.icono" class="catalog-img"></ion-img>
-            <div class="div-card-text">
-              <p class="card-text">{{arbol.nombre}}</p>
-            </div>
+            
+          </div>
+          <div class="div-card-text">
+            <p class="card-text">{{arbol.nombre}}</p>
           </div>
         </div>
       </ion-col>

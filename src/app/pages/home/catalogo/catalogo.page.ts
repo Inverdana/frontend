@@ -14,4 +14,9 @@ export class CatalogoPage implements OnInit {
   ngOnInit() {
     this.catalogo=this.catalogoService.getCatalogoArboles();
   }
+  async doSomething($arbol: any){  //Will be renamed as openModal()
+    console.log("do Something pressed!!!");
+    console.log($arbol);
+
+  }
 }
