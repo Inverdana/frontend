@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">{{modalTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-grid>
+    <ion-row>
+      <ion-img [src]="modalIcon" class="catalog-img"></ion-img>
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center offset="1">
+        <b>Nombre científico: </b>{{modalScientificName}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center offset="1">
+        <b>Descripción física: </b>{{modalDescription}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center offset="1">
+        <b>Región de México: </b>{{modalRegion}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center offset="1">
+        <b>Clima: </b>{{modalWether}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center offset="1">
+        <b>Consejos: </b>{{modalCareTips}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center offset="1">
+        <ion-button (click)="closeModal()" style="--background:#4A6A1D; --color:#EDF2DA;">Volver</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

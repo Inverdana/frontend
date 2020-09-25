@@ -27,7 +27,11 @@ const routes: Routes = [
   {
     path: 'amigos',
     loadChildren: () => import('./amigos/amigos.module').then( m => m.AmigosPageModule)
+  },  {
+    path: 'tree-modal',
+    loadChildren: () => import('./modals/tree-modal/tree-modal.module').then( m => m.TreeModalPageModule)
   }
+
 ];
 
 @NgModule({
