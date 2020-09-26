@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CatalogoPage } from './catalogo.page';
-import { TreeModalPageModule } from '../modals/tree-modal/tree-modal.module';
+import { TreeModalPage } from './tree-modal.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: CatalogoPage
+    component: TreeModalPage
   }
 ];
 
@@ -15,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CatalogoPageRoutingModule {}
+export class TreeModalPageRoutingModule {}

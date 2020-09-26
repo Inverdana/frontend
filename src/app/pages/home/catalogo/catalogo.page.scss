@@ -17,16 +17,20 @@
 .div-card2{
     align-items: center;
     border: 4px solid #9EB356;
-    border-radius: 50px;
+    background-color: #EDF2D5;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
 }
 
 .div-card-text{
-    background-color: #4A6A1D;
 
-    border-top: 4px solid #9EB356;
+    //border-top: 4px solid #9EB356;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     
+    height: 100%;
+    width: 100%;
+
     text-align: center;   
 }
 
