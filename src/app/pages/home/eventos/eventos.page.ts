@@ -46,9 +46,7 @@ export class EventosPage implements OnInit {
           }
         })        
         this.toastService.presentToast('Te has inscrito al evento de manera exitosa', 'success');        this.spinnerService.stopLoadingSpinner();
-        this.spinnerService.stopLoadingSpinner();
-        console.log('TEstintg');
-        
+        this.spinnerService.stopLoadingSpinner();        
       }
     });   
   }
