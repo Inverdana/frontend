@@ -8,7 +8,6 @@
     <ion-card-header>
       <ion-card-title>Hola</ion-card-title>
       <ion-card-subtitle *ngIf="me">{{me.nombre}} {{me.apellido}} Puntos: {{me.puntaje}}</ion-card-subtitle>
-
     </ion-card-header>
 
     <ion-card-content>
@@ -20,26 +19,39 @@
           </a>
               <ion-card-subtitle>Logros</ion-card-subtitle> 
         </ion-col>
+
         <ion-col size="6">
-         
-              <ion-img  src="assets/H_Eventos.svg"></ion-img>
-              <ion-card-subtitle>Eventos</ion-card-subtitle>
-                   </ion-col>
+          <ion-img  src="assets/H_Eventos.svg"></ion-img>
+          <ion-card-subtitle>Eventos</ion-card-subtitle>
+        </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col size="6">
           <a routerLink="/home/catalogo" routerDirection="forward">
-              <ion-img  src="assets/H_Catalogo.svg"></ion-img>
-              </a>
-              <ion-card-subtitle>Catálogo</ion-card-subtitle>
-                   </ion-col>
-        <ion-col size="6" >
-          
-              <ion-img  src="assets/H_Acerca.svg"></ion-img>
-              <ion-card-subtitle>Acerca de</ion-card-subtitle>
-
-                 </ion-col>
+            <ion-img  src="assets/H_Catalogo.svg"></ion-img>
+          </a>
+          <ion-card-subtitle>Catálogo</ion-card-subtitle>
+        </ion-col>
+        
+        <ion-col size="6">
+          <a routerLink="/home/mis-eventos" routerDirection="forward">
+            <ion-img  src="assets/H_Eventos.svg"></ion-img>
+          </a>
+          <ion-card-subtitle>Mis Eventos</ion-card-subtitle>
+        </ion-col>
+        
       </ion-row>
+        
+      <ion-row>
+        <ion-col size="6" >  
+          <ion-img  src="assets/H_Acerca.svg"></ion-img>
+          <ion-card-subtitle>Acerca de</ion-card-subtitle>
+        </ion-col>
+
+        
+      </ion-row>
+
     </ion-grid>
     </ion-card-content>
   </ion-card>

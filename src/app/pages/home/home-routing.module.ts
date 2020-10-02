@@ -30,6 +30,10 @@ const routes: Routes = [
   },  {
     path: 'tree-modal',
     loadChildren: () => import('./modals/tree-modal/tree-modal.module').then( m => m.TreeModalPageModule)
+  },
+  {
+    path: 'mis-eventos',
+    loadChildren: () => import('./mis-eventos/mis-eventos.module').then( m => m.MisEventosPageModule)
   }
 
 ];
