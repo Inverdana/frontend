@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Eventos',
-      url: '/folder/Archived',
+      url: '/home/eventos',
       icon: 'archive'
     },
     {
