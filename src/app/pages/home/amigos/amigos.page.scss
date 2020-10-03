@@ -1,0 +1,71 @@
+ion-content{
+    --background: none;
+    background-image: url(../../../../assets/Background/Curva_VF_Down.svg), url(../../../../assets/Background/Curva_VC_Down.svg);
+    background-position: 0% 105%, 100% 110%;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 90%, 90%;
+    background-attachment: fixed, fixed;
+    background-color: #EDF2D5;
+    vertical-align: middle;
+    text-align: center;
+}
+
+ion-item {
+    --background: #EDF2D5;
+}
+
+
+.div-card1{
+    align-items: center;
+    border-radius: 50px;
+    
+    margin-bottom: 20px;
+    margin-top: 20;
+    
+    
+}
+
+.div-card2{
+    align-items: center;
+    border-radius: 50px;
+}
+
+.div-card-text{
+    text-align: center;   
+}
+
+.title{
+    color: #4A6A1D;
+    font-family: Century Gothic, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.paragraph{
+    color: #9EB356;
+    font-family: Century Gothic, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+
+.code-zone{
+    --background: none;
+    background-image: url(../../../../assets/Background/Buttom.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    padding: 10px
+    
+
+}
+
+.code{
+    color: #EDF2D5;
+    font-family: Century Gothic, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    
+}
+

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { SpinnerService } from 'src/app/services/spinner.service';
+import { ToastService } from 'src/app/services/toast.service';
+import { MeInterface } from 'src/app/types/me.interface';
 
 @Component({
   selector: 'app-amigos',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AmigosPage implements OnInit {
 
-  constructor() { }
+  public code: string;
+  public shareMessage: string;
+  me: MeInterface;
+
+  constructor(
+    public authService: AuthService,
+    public toastService: ToastService,
+    public spinnerService: SpinnerService
+  ) { }
 
   ngOnInit() {
+    this.spinnerService.startLoadingSpinner();
+    this.authService.me().subscribe(me => {
+      
+      this.code = me.nombre.toUpperCase() + me.apellido.toUpperCase() + me.id;
+      this.spinnerService.stopLoadingSpinner();
+    })
+    
+    
   }
 
 }
