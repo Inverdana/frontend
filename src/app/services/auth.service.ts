@@ -27,7 +27,8 @@ export class AuthService {
         nombre:value.first_name,
         apellido:value.last_name,
         puntaje:value.puntaje,
-      }
+        participaciones: value.participaciones
+      }      
       return me;
     } ))
   }
