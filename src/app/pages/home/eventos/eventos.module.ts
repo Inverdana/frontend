@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { EventosPageRoutingModule } from './eventos-routing.module';
 
 import { EventosPage } from './eventos.page';
+import { CustomToolbarModule } from 'src/app/shared/custom-toolbar/custom-toolbar.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EventosPageRoutingModule
+    EventosPageRoutingModule,
+    CustomToolbarModule
   ],
   declarations: [EventosPage]
 })
