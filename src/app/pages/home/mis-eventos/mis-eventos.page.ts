@@ -18,6 +18,7 @@ export class MisEventosPage implements OnInit {
   ngOnInit() {
     this.authService.me().subscribe(me => {
       this.me=me; 
+      console.log(me.participaciones);
     });
   }
 

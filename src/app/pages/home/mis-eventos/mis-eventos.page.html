@@ -16,7 +16,11 @@
               <p class="card-text"><b>Capacidad: </b>{{participacion.evento.cupo}} personas.</p>
               <p class="card-description">{{participacion.evento.descripcion}}</p>
               <p class="card-description"><b>Ubicación: </b>{{participacion.evento.lugar}}</p>
-              
+
+              <p class="card-description"><b>Inicio: </b>{{participacion.evento.fecha_inicio}}</p>
+              <p class="card-description"><b>Final: </b>{{participacion.evento.fecha_fin}}</p>
+
+              <p class="card-description"><b>Estatus: </b>{{participacion.asistio ? "Asististe" : "No has asistido"}}</p>
               
               <br><br><br>
             </div>
