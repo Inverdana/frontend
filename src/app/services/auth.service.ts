@@ -24,7 +24,7 @@ export class AuthService {
   me():Observable<MeInterface>{
     return this.http.get<MeResponseInterface>(environment.api.yo).pipe(map(value=>{
       const me : MeInterface = {
-        id:value.id,
+        username: value.username,
         nombre:value.first_name,
         apellido:value.last_name,
         puntaje:value.puntaje,

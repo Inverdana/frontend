@@ -25,7 +25,7 @@ export class AmigosPage implements OnInit {
     this.spinnerService.startLoadingSpinner();
     this.authService.me().subscribe(me => {
       
-      this.code = me.nombre.toUpperCase() + me.apellido.toUpperCase() + me.id;
+      this.code = me.username;
       this.spinnerService.stopLoadingSpinner();
     })
     
