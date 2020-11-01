@@ -69,3 +69,22 @@ ion-item {
     
 }
 
+.leaf-button{
+    --background: none;
+    background-image: url(../../../../assets/Background/Buttom.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    padding: 10px
+}
+
+
+.leaf-text{
+    color: #EDF2D5;
+    font-family: Century Gothic, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    
+}
+

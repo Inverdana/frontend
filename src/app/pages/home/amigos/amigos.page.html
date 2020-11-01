@@ -4,28 +4,60 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row>
-     
-    <ng-container>
-      <ion-col size-xs="11" size-sm="8" size-md="8" size-lg="8" size-xl="8" offset-xs="0.5" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
-        <div class="div-card1">
-          <div class="div-card2">
-            
-            <div class="div-card-text ">
-              <p class="title">¡INVITA A TUS AMIGOS!</p>
-              <!-- <p class="paragraph">Apoya a que los eventos lleguen a más personas e invita a tus amigos a formar de esta comunidad para obtener logros dentro de la aplicación</p> -->
-              <p class="paragraph">Obtén logros al invitar a tus amigos a descargar la app</p>
-              <ion-img src="../assets/Friends.svg" class="event-img"></ion-img>
-              <div class="code-zone"> 
-                <p class="code">{{ code }}</p>
+
+    <ion-row *ngIf="!addFriendForm">
+      <ng-container>
+        <ion-col size-xs="11" size-sm="8" size-md="8" size-lg="8" size-xl="8" offset-xs="0.5" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
+          <div class="div-card1">
+            <div class="div-card2">
+              
+              <div class="div-card-text ">
+                <p class="title">¡INVITA A TUS AMIGOS!</p>
+                <p class="paragraph">Obtén logros al invitar a tus amigos a descargar la app</p>
+                <ion-img src="../assets/Friends.svg" class="event-img"></ion-img>
+                <br>
+                <div class="code-zone"> 
+                  <span class="code">{{ code }}</span>
+                </div>
+                <u (click)="switchView()">Ingresa un código de amigo</u>
+                
               </div>
             </div>
           </div>
-        </div>
-      </ion-col>
-    </ng-container>
-      
-
+        </ion-col>
+      </ng-container>
     </ion-row>
+
+    <ion-row *ngIf="addFriendForm">
+      <ng-container>
+        <ion-col size-xs="11" size-sm="8" size-md="8" size-lg="8" size-xl="8" offset-xs="0.5" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
+          <div class="div-card1">
+            <div class="div-card2">
+              
+              <div class="div-card-text ">
+                <p class="title">¡ÚNETE A LA COMUNIDAD!</p>
+                <p class="paragraph">Ingresa el código de un amigo y haz crecer esta comunidad</p>
+                <ion-img src="../assets/Friends.svg" class="event-img"></ion-img>
+                <ng-container>
+                  <form>
+                    <ion-item>
+                      <ion-label position="floating">Código de amigo</ion-label>
+                      <ion-input [(ngModel)]="friendCode" name="friendCode" type="text" class="form-control" ></ion-input>
+                    </ion-item>
+                  </form>
+                  <div class="leaf-button"> 
+                    <span class="leaf-text" (click)="addFriendCode()">continuar</span>
+                  </div>
+                  <u (click)="switchView()">Ingresa un código de amigo</u>
+                </ng-container>
+                
+              </div>
+            </div>
+          </div>
+        </ion-col>
+      </ng-container>
+      
+    </ion-row>
+
   </ion-grid>
 </ion-content>
