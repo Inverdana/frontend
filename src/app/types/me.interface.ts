@@ -4,4 +4,5 @@ export interface MeInterface {
     apellido?: string;
     puntaje?: number;
     participaciones?: any;
+    referido_nombre?: string;
 }

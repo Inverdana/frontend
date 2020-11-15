@@ -35,21 +35,35 @@
             <div class="div-card2">
               
               <div class="div-card-text ">
-                <p class="title">¡ÚNETE A LA COMUNIDAD!</p>
-                <p class="paragraph">Ingresa el código de un amigo y haz crecer esta comunidad</p>
-                <ion-img src="../assets/Friends.svg" class="event-img"></ion-img>
-                <ng-container>
-                  <form>
-                    <ion-item>
-                      <ion-label position="floating">Código de amigo</ion-label>
-                      <ion-input [(ngModel)]="friendCode" name="friendCode" type="text" class="form-control" ></ion-input>
-                    </ion-item>
-                  </form>
-                  <div class="leaf-button"> 
-                    <span class="leaf-text" (click)="addFriendCode()">continuar</span>
+                <div *ngIf="user.referido_nombre">
+                  <p class="title">¡YA PERTENECES A LA COMUNIDAD!</p>
+                  <p class="paragraph">No necesitas ingresar otro código</p>
+                  <ion-img src="../assets/Friends.svg" class="event-img"></ion-img>
+                  <br>
+                  <p>Tu amigo referente es: </p>
+                  <div class="code-zone"> 
+                    <span class="code">{{ user.referido_nombre }}</span>
                   </div>
-                  <u (click)="switchView()">Ingresa un código de amigo</u>
-                </ng-container>
+                </div>
+                <div *ngIf="!user.referido_nombre">
+                  <p class="title">¡ÚNETE A LA COMUNIDAD!</p>
+                  <p class="paragraph">Ingresa el código de un amigo y haz crecer esta comunidad</p>
+                  <ion-img src="../assets/Friends.svg" class="event-img"></ion-img>
+                  <ng-container>
+                    <form>
+                      <ion-item>
+                        <ion-label position="floating">Código de amigo</ion-label>
+                        <ion-input [(ngModel)]="friendCode" name="friendCode" type="text" class="form-control" ></ion-input>
+                      </ion-item>
+                    </form>
+                    <div class="leaf-button"> 
+                      <span class="leaf-text" (click)="addFriendCode()">continuar</span>
+                    </div>
+                    
+                  </ng-container>
+                </div>
+                <u (click)="switchView()">Consulta tu código de amigo</u>
+                
                 
               </div>
             </div>

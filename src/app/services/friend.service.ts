@@ -11,12 +11,7 @@ export class FriendService {
 
   constructor(private http: HttpClient) { }
 
-  public addAmigo(code: string) {
-    this.http.post(environment.api.amigos, {uname: code}, {observe: 'response'})
-    .subscribe( response => {
-        console.log(response);
-    }, (error: HttpErrorResponse) => {
-        console.log('Oopsies');
-    });
+  public async addAmigo(code: string) {
+    return this.http.post(environment.api.amigos, {uname: code});
   }
 }

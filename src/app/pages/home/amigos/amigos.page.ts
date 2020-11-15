@@ -13,7 +13,9 @@ import { FriendService } from 'src/app/services/friend.service';
 export class AmigosPage implements OnInit {
 
   public code: string;
+  public user: MeInterface;
   public addFriendForm: boolean;
+  public switchViewMessage: string;
   public shareMessage: string;
   public friendCode: string;
 
@@ -26,20 +28,24 @@ export class AmigosPage implements OnInit {
 
   ngOnInit() {
     this.addFriendForm = false;
-    this.spinnerService.startLoadingSpinner();
     this.authService.me().subscribe(me => {
       this.code = me.username;
-      this.spinnerService.stopLoadingSpinner();
+      this.user = me;
     });
 
   }
+
 
   switchView() {
     this.addFriendForm = !this.addFriendForm;
   }
 
   async addFriendCode() {
-      await this.amigoService.addAmigo(this.friendCode);
+    const response = await this.amigoService.addAmigo(this.friendCode);
+    response.subscribe(t => {
+      this.toastService.presentToast('Se ha agregado el código de forma exitosa', 'success');
+      this.ngOnInit();
+    })
   }
 
 }
