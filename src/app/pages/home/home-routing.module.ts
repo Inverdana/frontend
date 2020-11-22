@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'mis-eventos',
     loadChildren: () => import('./mis-eventos/mis-eventos.module').then( m => m.MisEventosPageModule)
+  },
+  {
+    path: 'acerca-de',
+    loadChildren: () => import('./acerca-de/acerca-de.module').then( m => m.AcercaDePageModule)
   }
 
 ];
