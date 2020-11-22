@@ -14,7 +14,7 @@ export class AcercaDePage implements OnInit {
   ngOnInit() {
     /*from https://www.youtube.com/watch?v=t-6-vlLj2l0*/
     this.vidUrl = this.domSanitizer.bypassSecurityTrustResourceUrl
-    ("https://www.wikipedia.org/");
+    ("assets/imagine/index.html");
   }
 
 }
