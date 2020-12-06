@@ -7,22 +7,26 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SpinnerService {
+
+  private isLoading = false;
+
   constructor(public loadingController: LoadingController) {}
 
   async startLoadingSpinner() {
-    const loading = await this.loadingController.create({
+    this.isLoading = true;
+    return await this.loadingController.create({
       message: 'Cargando',
-      duration: 60000
+    }).then( a => {
+      a.present().then( () => {
+        if (!this.isLoading) {
+          a.dismiss();
+        }
+      });
     });
-    await loading.present();
-
-    const { role, data } = await loading.onDidDismiss();
-
-    console.log('Loading dismissed!');
   }
 
   async stopLoadingSpinner() {
-      this.loadingController.dismiss();
+    return await this.loadingController.dismiss();
   }
 
 }

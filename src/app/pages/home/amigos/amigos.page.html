@@ -1,9 +1,77 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>amigos</ion-title>
-  </ion-toolbar>
+  <custom-toolbar></custom-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid>
 
+    <ion-row *ngIf="!addFriendForm">
+      <ng-container>
+        <ion-col size-xs="11" size-sm="8" size-md="8" size-lg="8" size-xl="8" offset-xs="0.5" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
+          <div class="div-card1">
+            <div class="div-card2">
+              
+              <div class="div-card-text ">
+                <p class="title">¡INVITA A TUS AMIGOS!</p>
+                <p class="paragraph">Obtén logros al invitar a tus amigos a descargar la app</p>
+                <ion-img src="../assets/Friends.svg" class="event-img"></ion-img>
+                <br>
+                <div class="code-zone"> 
+                  <span class="code">{{ code }}</span>
+                </div>
+                <u (click)="switchView()">Ingresa un código de amigo</u>
+                
+              </div>
+            </div>
+          </div>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+
+    <ion-row *ngIf="addFriendForm">
+      <ng-container>
+        <ion-col size-xs="11" size-sm="8" size-md="8" size-lg="8" size-xl="8" offset-xs="0.5" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
+          <div class="div-card1">
+            <div class="div-card2">
+              
+              <div class="div-card-text ">
+                <div *ngIf="user.referido_nombre">
+                  <p class="title">¡YA PERTENECES A LA COMUNIDAD!</p>
+                  <p class="paragraph">No necesitas ingresar otro código</p>
+                  <ion-img src="../assets/Friends.svg" class="event-img"></ion-img>
+                  <br>
+                  <p>Tu amigo referente es: </p>
+                  <div class="code-zone"> 
+                    <span class="code">{{ user.referido_nombre }}</span>
+                  </div>
+                </div>
+                <div *ngIf="!user.referido_nombre">
+                  <p class="title">¡ÚNETE A LA COMUNIDAD!</p>
+                  <p class="paragraph">Ingresa el código de un amigo y haz crecer esta comunidad</p>
+                  <ion-img src="../assets/Friends.svg" class="event-img"></ion-img>
+                  <ng-container>
+                    <form>
+                      <ion-item>
+                        <ion-label position="floating">Código de amigo</ion-label>
+                        <ion-input [(ngModel)]="friendCode" name="friendCode" type="text" class="form-control" ></ion-input>
+                      </ion-item>
+                    </form>
+                    <div class="leaf-button"> 
+                      <span class="leaf-text" (click)="addFriendCode()">continuar</span>
+                    </div>
+                    
+                  </ng-container>
+                </div>
+                <u (click)="switchView()">Consulta tu código de amigo</u>
+                
+                
+              </div>
+            </div>
+          </div>
+        </ion-col>
+      </ng-container>
+      
+    </ion-row>
+
+  </ion-grid>
 </ion-content>
