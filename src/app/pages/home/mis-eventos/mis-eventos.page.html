@@ -1,0 +1,35 @@
+<ion-header>
+  <custom-toolbar></custom-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngIf="me != null">
+     
+      <ng-container *ngFor="let participacion of me.participaciones">
+      <ion-col size-xs="11" size-sm="8" size-md="8" size-lg="8" size-xl="8" offset-xs="0.5" offset-sm="2" offset-md="2" offset-lg="2" offset-xl="2"> 
+        <div class="div-card1">
+          <div class="div-card2">
+            <ion-img src="assets/evento_placeholder.png" class="event-img"></ion-img>
+            <div class="div-card-text ">
+              <p class="card-text">{{participacion.evento.nombre}}</p>
+              <p class="card-text"><b>Capacidad: </b>{{participacion.evento.cupo}} personas.</p>
+              <p class="card-description">{{participacion.evento.descripcion}}</p>
+              <p class="card-description"><b>Ubicación: </b>{{participacion.evento.lugar}}</p>
+
+              <p class="card-description"><b>Inicio: </b>{{participacion.evento.fecha_inicio}}</p>
+              <p class="card-description"><b>Final: </b>{{participacion.evento.fecha_fin}}</p>
+
+              <p class="card-description"><b>Estatus: </b>{{participacion.asistio ? "Asististe" : "No has asistido"}}</p>
+              
+              <br><br><br>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ng-container>
+      
+
+    </ion-row>
+  </ion-grid>
+</ion-content>
