@@ -17,7 +17,6 @@ export class EventosPage implements OnInit {
     public eventosService:EventosService,
     public authService: AuthService,
     public toastService: ToastService,
-    public spinnerService: SpinnerService
   ) { }
   eventos:Observable<any>;
   me: MeInterface;
@@ -32,12 +31,10 @@ export class EventosPage implements OnInit {
   }
 
   public inscribirEvento(id: number) {    
-    this.spinnerService.startLoadingSpinner();
     this.eventos.subscribe(eventos => {      
       let alreadySubscribed = this.me.participaciones.find(participacion => participacion.evento.id === id);
       if (alreadySubscribed) {
         this.toastService.presentToast('Ya estás inscrito a este evento', 'warning');
-        this.spinnerService.stopLoadingSpinner();
       } else {
         this.eventosService.inscribirEvento(id);
         this.me.participaciones.push({
@@ -45,8 +42,7 @@ export class EventosPage implements OnInit {
             id
           }
         })        
-        this.toastService.presentToast('Te has inscrito al evento de manera exitosa', 'success');        this.spinnerService.stopLoadingSpinner();
-        this.spinnerService.stopLoadingSpinner();        
+        this.toastService.presentToast('Te has inscrito al evento de manera exitosa', 'success');
       }
     });   
   }
